@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="en"><head>
+  <!-- Title -->
+  <title>{{ employee }} - Gervase Staff </title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="/static/css/plugins/fontawesome-6.css">
+  <link rel="stylesheet" href="/static/staff/css/animate.min.css">
+  <link rel="stylesheet" href="/static/staff/css/hs.megamenu.css">
+  <link rel="stylesheet" href="/static/staff/css/bootstrap-select.min.css">
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="/static/staff/css/theme.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="u-header">
+    <div class="u-header__section">
+
+      <div id="logoAndNav" class="container">
+        <!-- Nav -->
+        <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+          <!-- Logo -->
+          <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="/" aria-label="Gervase">
+            <img src="/static/logo/Gervase Dashboard logo.png">
+          </a>
+          <!-- End Logo -->
+
+          <!-- Responsive Toggle Button -->
+          <button type="button" class="navbar-toggler btn u-hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+            <span id="hamburgerTrigger" class="u-hamburger__box">
+              <span class="u-hamburger__inner"></span>
+            </span>
+          </button>
+          <!-- End Responsive Toggle Button -->
+
+          <!-- Navigation -->
+          <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+            <ul class="navbar-nav u-header__navbar-nav">
+              <!-- Link -->
+              <li class="nav-item u-header__nav-item">
+                <a class="nav-link u-header__nav-link" href="/staff">Staff Team</a>
+              </li>
+              <!-- End Link -->
+
+              <!-- Button -->
+              <li class="nav-item u-header__nav-last-item">
+                <a class="btn btn-sm btn-primary transition-3d-hover" href="/jobs" target="_blank">
+                  Create Yours!
+                </a>
+              </li>
+              <!-- End Button -->
+            </ul>
+          </div>
+          <!-- End Navigation -->
+        </nav>
+        <!-- End Nav -->
+      </div>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Profile Section -->
+    <div class="container space-2">
+      <div class="row">
+        <div class="col-lg-4 mb-9 mb-lg-0">
+          <!-- Sidebar Info -->
+          <div class="card shadow-sm p-5 mb-5">
+            <div class="border-bottom text-center pb-5 mb-5">
+
+              <!-- Avatar -->
+              <div class="mb-3 mx-auto">
+                <img class="img-fluid rounded-circle" src="{{ image }}" width="110" height="110" alt="Image Description">
+              </div>
+              <!-- End Avatar -->
+
+              <h1 class="h5">{{ name }}</h1>
+
+              <!-- Review -->
+              <div class="mb-2">
+                <span class="text-warning">
+                  {% for _ in range(full_stars) %}
+                      <small class="fas fa-star"></small>
+                  {% endfor %}
+                  {% if half_star %}
+                      <small class="fas fa-star-half-alt"></small>
+                  {% endif %}
+                </span>
+                <span class="font-weight-semi-bold ml-2">{{ totalstars }}</span>
+                <small class="text-muted">({{ totalreviews }} reviews)</small>
+              </div>
+              <!-- End Review -->
+
+              <!-- Additional Info -->
+              <ul class="list-inline text-secondary font-size-1 mb-4">
+                <li class="list-inline-item">
+                  <small class="fas fa-map-marker-alt mr-1"></small>
+                  {{ city }}
+                </li>
+                <li class="list-inline-item text-muted">•</li>
+                <li class="list-inline-item">
+                  {{ joindate }}
+                </li>
+              </ul>
+              <!-- End Additional Info -->
+
+              <div class="mb-2">
+                <a class="btn btn-block btn-sm btn-soft-primary transition-3d-hover" href="#">Review Me</a>
+              </div>
+            </div>
+
+            <div class="border-bottom pb-5 mb-5">
+              <div id="SVGemployeeStatsIcon" class="svg-preloader row">
+                <div class="col-6 mb-5">
+                  <!-- Stats -->
+                  <div class="text-center">
+                    <figure class="ie-height-48 max-width-5 mb-2 mx-auto">
+                      <img class="js-svg-injector" src="/static/staff/images/icon-35.svg" alt="SVG" data-parent="#SVGemployeeStatsIcon">
+                    </figure>
+                    <span class="h6 d-block font-weight-medium mb-0">{{ hourly }}</span>
+                    <span class="d-block text-secondary font-size-1">Hourly rate</span>
+                  </div>
+                  <!-- End Stats -->
+                </div>
+
+                <div class="col-6 mb-5">
+                  <!-- Stats -->
+                  <div class="text-center">
+                    <figure class="ie-height-48 max-width-5 mb-2 mx-auto">
+                      <img class="js-svg-injector" src="/static/staff/images/icon-37.svg" alt="SVG" data-parent="#SVGemployeeStatsIcon">
+                    </figure>
+                    <span class="h6 d-block font-weight-medium mb-0">{{ jobs }}</span>
+                    <span class="d-block text-secondary font-size-1">Jobs done</span>
+                  </div>
+                  <!-- End Stats -->
+                </div>
+
+                <div class="col-6">
+                  <!-- Stats -->
+                  <div class="text-center">
+                    <figure class="ie-height-48 max-width-5 mb-2 mx-auto">
+                      <img class="js-svg-injector" src="/static/staff/images/icon-5.svg" alt="SVG" data-parent="#SVGemployeeStatsIcon">
+                    </figure>
+                    <span class="h6 d-block font-weight-medium mb-0">{{ success }}</span>
+                    <span class="d-block text-secondary font-size-1">Success rate</span>
+                  </div>
+                  <!-- End Stats -->
+                </div>
+
+                <div class="col-6">
+                  <!-- Stats -->
+                  <div class="text-center">
+                    <figure class="ie-height-48 max-width-5 mb-2 mx-auto">
+                      <img class="js-svg-injector" src="/static/staff/images/icon-7.svg" alt="SVG" data-parent="#SVGemployeeStatsIcon">
+                    </figure>
+                    <span class="h6 d-block font-weight-medium mb-0">{{ clients }}</span>
+                    <span class="d-block text-secondary font-size-1">Repeat clients</span>
+                  </div>
+                  <!-- End Stats -->
+                </div>
+              </div>
+            </div>
+
+            <div class="border-bottom pb-5 mb-5">
+              <h2 class="font-size-1 font-weight-semi-bold text-uppercase mb-3">Bio</h2>
+
+              <p class="font-size-1 mb-0">{{ bio }}</p>
+            </div>
+
+            <div class="border-bottom pb-5 mb-5">
+              <h3 class="font-size-1 font-weight-semi-bold text-uppercase mb-3">Languages</h3>
+
+              <!-- Languages -->
+              {% for language in languages %}
+              <span class="d-block font-size-1 font-weight-medium">{{ language }} - <span class="text-muted font-weight-normal">{{ languages[language]['status'] }}</span></span>
+              {% endfor %}
+              <!-- End Languages -->
+            </div>
+
+            <div class="border-bottom pb-5 mb-5">
+              <h3 class="font-size-1 font-weight-semi-bold text-uppercase mb-3">Skills</h3>
+
+              <!-- Skills -->
+              {% for skill in skills %}
+              <a class="btn btn-xs btn-gray mb-1">{{ skill }}</a>
+              {% endfor %}
+              <!-- End Skills -->
+            </div>
+
+            <div class="border-bottom pb-5 mb-5">
+              <h3 class="font-size-1 font-weight-semi-bold text-uppercase mb-3">Badges</h3>
+
+              <!-- Rewards -->
+              <div class="mb-3">
+                {% for badge in badges %}
+                <img class="max-width-5 mr-1" src=" {{ badges[badge]['url'] }}" alt="Image Description" title="{{ badges[badge]['title'] }}">
+                {% endfor %}
+              </div>
+              <!-- End Rewards -->
+
+              <p class="small mb-0">{{ expertice }}</p>
+            </div>
+
+            <!-- 
+            <div class="border-bottom pb-5 mb-5">
+              <h3 class="font-size-1 font-weight-semi-bold text-uppercase mb-3">Work experience</h3>
+
+              <ul class="list-unstyled u-indicator-vertical-dashed">
+                <li class="media u-indicator-vertical-dashed-item">
+                  <span class="btn btn-xs btn-icon btn-soft-success rounded-circle mr-3">
+                    <span class="btn-icon__inner">S</span>
+                  </span>
+                  <div class="media-body">
+                    <h4 class="font-size-1 mb-1">Product Director</h4>
+                    <ul class="list-unstyled small text-secondary mb-0">
+                      <li>
+                        <a href="#">Spotify Inc.</a>
+                      </li>
+                      <li>Jan 2008 to Mar 2010</li>
+                      <li>San Francisco, California</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="media u-indicator-vertical-dashed-item">
+                  <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
+                    <span class="btn-icon__inner">D</span>
+                  </span>
+                  <div class="media-body">
+                    <h4 class="font-size-1 mb-1">Channel Sales Director</h4>
+                    <ul class="list-unstyled small text-secondary mb-0">
+                      <li>
+                        <a href="#">Dropbox Inc.</a>
+                      </li>
+                      <li>Apr 2010 to Sep 2015</li>
+                      <li>Newark, NJ</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="media u-indicator-vertical-dashed-item">
+                  <span class="btn btn-xs btn-icon btn-soft-danger rounded-circle mr-3">
+                    <span class="btn-icon__inner">A</span>
+                  </span>
+                  <div class="media-body">
+                    <h4 class="font-size-1 mb-1">Business manager</h4>
+                    <ul class="list-unstyled small text-secondary mb-0">
+                      <li>
+                        <a href="#">Airbnb Inc.</a>
+                      </li>
+                      <li>Oct 2015 to Present</li>
+                      <li>San Francisco, California</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>-->
+
+            <h4 class="font-size-1 font-weight-semi-bold text-uppercase mb-3">Linked accounts</h4>
+
+            {% for account in accounts %}
+            <!-- Linked Account -->
+            <a class="media align-items-center mb-3" href="{{ accounts[account]['link'] }}">
+              <div class="u-sm-avatar mr-3">
+                <big class="img-fluid {{ accounts[account]['logo'] }}"></big>
+              </div>
+              <div class="media-body">
+                <h4 class="font-size-1 text-dark mb-0">{{ accounts[account]['title'] }}</h4>
+                <small class="d-block text-secondary">{{accounts[account]['url']  }}</small>
+              </div>
+            </a>
+            <!-- End Linked Account -->
+            {% endfor %}
+          </div>
+          <!-- End Sidebar Info -->
+        </div>
+
+        <div class="col-lg-8">
+          <div class="pl-lg-4">
+            <div class="mb-3">
+              <h4 class="h5 mb-0">Portfolio</h4>
+            </div>
+
+            <div class="mb-9">
+              <div class="card-deck card-sm-gutters-2 d-block d-sm-flex">
+                {% for post in posts %}
+                <!-- News Blog -->
+                <a class="card card-text-dark border-0 shadow-sm transition-3d-hover mb-5">
+                  <img class="card-img-top" src="{{ posts[post]['image'] }}" alt="Image Description">
+                  <div class="card-body p-4">
+                    <h2 class="h6 mb-0">{{ posts[post]['title'] }}</h2>
+                    <small class="d-block text-secondary">{{ posts[post]['desc'] }}</small>
+                  </div>
+                </a>
+                <!-- End News Blog -->
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="d-sm-flex justify-content-sm-between align-items-sm-center border-bottom pb-5 mb-5">
+              <div class="d-flex align-items-center mb-2 mb-sm-0">
+                <h4 class="h5 mb-0">Reviews</h4>
+
+                <!-- Review -->
+                <div class="text-warning ml-3">
+                  {% for _ in range(full_stars) %}
+                      <small class="fas fa-star"></small>
+                  {% endfor %}
+                  {% if half_star %}
+                      <small class="fas fa-star-half-alt"></small>
+                  {% endif %}
+                  <span class="font-weight-semi-bold align-middle">{{ totalstars }}</span>
+                  <span class="text-muted align-middle">({{ totalreviews }} reviews)</span>
+                </div>
+                <!-- End Review -->
+              </div>
+            </div>
+
+            <div class="border-bottom pb-5 mb-5">
+              {% for review in reviews %}
+              <!-- Testimonial -->
+              <div class="mb-4">
+                <h4 class="h6">{{ reviews[review]['title'] }}</h4>
+                <p>{{ reviews[review]['desc'] }}</p>
+              </div>
+
+              <div class="media">
+                <div class="u-avatar mr-3">
+                  <img class="img-fluid rounded-circle" src="{{ reviews[review]['avatar'] }}" alt="Image Description">
+                </div>
+                <div class="media-body">
+                  <h4 class="h6 mb-1">{{ reviews[review]['name'] }}</h4>
+                  <!-- Review -->
+                  <div class="small mb-4">
+                    <span class="text-warning">
+                      <span class="fas fa-star"></span>
+                      <span class="fas fa-star"></span>
+                      <span class="fas fa-star"></span>
+                      <span class="fas fa-star"></span>
+                      <span class="fas fa-star"></span>
+                    </span>
+                    <span class="font-weight-semi-bold ml-2">{{reviews[review]['stars']}}</span>
+                    <span class="text-muted">{{ reviews[review]['date'] }}</span>
+                  </div>
+                  <!-- End Review -->
+                </div>
+              </div>
+              <!-- End Testimonial -->
+              
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="gradient-half-primary-v4">
+    <div class="container">
+      <!-- CTA -->
+      <div class="row justify-content-lg-between align-items-md-center space-2">
+        <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+          <h3 class="text-white font-weight-medium mb-1">Ready to get started?</h3>
+          <p class="text-white-70 mb-0">Sign up to find your dream job.</p>
+        </div>
+
+        <div class="col-md-6 col-lg-5 text-md-right">
+          <a class="btn btn-success btn-wide transition-3d-hover mb-1 mb-sm-0 mr-sm-1" href="/jobs">Sign Up</a>
+        </div>
+      </div>
+      <!-- End CTA -->
+      <div>
+        <!-- Copyright -->
+        <p class="small text-white-70 mt-lg-auto mb-0">© Front. 2019 Htmlstream.</p>
+        <!-- End Copyright -->
+      </div>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- Go to Top -->
+  <a 15="" class="js-go-to u-go-to" href="#" data-position="{" bottom":="" 15,="" "right":="" }"="" data-type="fixed" data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="/static/staff/js/jquery.min.js"></script>
+  <script src="/static/staff/js/jquery-migrate.min.js"></script>
+  <script src="/static/staff/js/popper.min.js"></script>
+  <script src="/static/staff/js/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="/static/staff/js/hs.megamenu.js"></script>
+  <script src="/static/staff/js/svg-injector.min.js"></script>
+  <script src="/static/staff/js/jquery.validate.min.js"></script>
+  <script src="/static/staff/js/bootstrap-select.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="/static/staff/js/hs.core.js"></script>
+  <script src="/static/staff/js/hs.header.js"></script>
+  <script src="/static/staff/js/hs.unfold.js"></script>
+  <script src="/static/staff/js/hs.focus-state.js"></script>
+  <script src="/static/staff/js/hs.validation.js"></script>
+  <script src="/static/staff/js/hs.selectpicker.js"></script>
+  <script src="/static/staff/js/hs.svg-injector.js"></script>
+  <script src="/static/staff/js/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate');
+
+      // initialization of select picker
+      $.HSCore.components.HSSelectPicker.init('.js-select');
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+
+</body></html>
